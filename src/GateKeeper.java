@@ -18,7 +18,6 @@ public class GateKeeper extends Agent {
 
                     if (msg.getReplyWith() != null) {
 
-                        System.out.println(myAgent.getLocalName() + " received a reply.");
                         if (content.equals("Yes")) {
                             ACLMessage msgToClient = new ACLMessage(ACLMessage.CONFIRM);
                             msgToClient.setContent(content);

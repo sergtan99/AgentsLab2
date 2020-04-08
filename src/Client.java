@@ -10,8 +10,8 @@ public class Client extends Agent
     protected void setup()
     {
         System.out.println("Hello. My name is "+getLocalName()+".");
-        // First set-up answering behaviour
 
+        // Answering behaviour
         addBehaviour(new CyclicBehaviour(this)
         {
             public void action() {
@@ -22,16 +22,7 @@ public class Client extends Agent
                 block();
             }
         });
-
-        try {
-            TimeUnit.SECONDS.sleep(4);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-
         // Send message
-
         ACLMessage msg = new ACLMessage(ACLMessage.REQUEST);
         msg.setContent( "date:08.04.2021, time:14.00, people:2" );
         msg.addReceiver( new AID( "GateKeeper", AID.ISLOCALNAME) );
